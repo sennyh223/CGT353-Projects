@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>title</title>
+    <style type="text/css">
+        #dropdown{
+            position: absolute;
+            top: -150px;
+            left: 500px;
+            background-color: #ffffff;
+            padding: 20px;
+            border: 1px solid #000000;
+            z-index: 75;
+        }
+    </style>
+</head>
+
+<body>
+    <h3> Assign04- Moving Ad</h3>
+    <div id="dropdown">
+        <p>Place Ad Content Here</p>
+        <p>Will you take our quick survey?</p>
+        <a href="#" id="closeAd">Close</a
+    </div>
+    <script type ="text/javascript" src="js/jquery-3.7.1.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+                var counter = 0;
+                while(counter <100)
+                {
+                    $("#dropdown").animate({
+                        top:"+=300",
+                        left:"-=300"
+                    },700);
+                    $("#dropdown").animate({
+                        top:"+=300",
+                        left:"+=300"
+                    },700);
+                    $("#dropdown").animate({
+                        top:"-=300",
+                        left:"+=300"
+                    },700);
+                    $("#dropdown").animate({
+                        top:"-=300",
+                        left:"-=300"
+                    },700);
+
+                    counter++;
+                }
+            $("a").hover(function(e){
+                $("a").css("float", "right");
+            })
+            })
+            $("a").click(function(){
+                $("a").click(function(e){
+                    e.preventDefault();
+                    $("#dropdown").hide();
+                });
+            });
+    </script>
+    
+</body>
+</html>

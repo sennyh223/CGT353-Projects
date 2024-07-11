@@ -1,0 +1,353 @@
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-image: url('images/background.gif');
+}
+
+.heading {
+    margin-top: 0%;
+    text-align: center;
+    height: 90px;
+    margin-bottom: 10%;
+    font-size: 20pt;
+    z-index: 4;
+    position: relative;
+}
+
+#fixed {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #f0f0f0;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 100vh;
+    cursor: none;
+}
+.custom-cursor {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    mix-blend-mode: difference; 
+    pointer-events: none; 
+    transform-origin: center;
+    animation: pulse 1s infinite;
+    z-index: 100;
+}
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+.photo {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    margin: 10px;
+    transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+    overflow: hidden;
+    text-align: center;
+    z-index: 2;
+    opacity: 0;
+    transform: translateX(100%); 
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+.photo.slid-in {
+    opacity: 1; 
+    transform: translateY(0) translateX(0); 
+}
+
+.photo img {
+    width: 100%;
+    height: 80%;
+    object-fit: cover;
+    filter: grayscale(100%);
+    transition: filter 0.5s ease-in-out;
+    z-index: 2;
+}
+
+.photo:hover img {
+    filter: grayscale(0%); 
+    transition: transform 0.5s ease-in-out; 
+    transform: scale(1.03);
+    cursor: pointer;
+}
+.photo.spin img {
+    transition: transform 1s ease-in-out;
+}
+
+.photo.spin:hover img {
+    transform: rotate(360deg);
+}
+.photo.border img {
+    border-width: 3px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border-color: #ff82d3;
+}
+
+.photo.border:hover img {
+    transition: transform 1s ease-in-out;
+}
+
+.photo p {
+    margin: 10px 0;
+    color: #333;
+}
+
+.enlarged-photo {
+    position: relative;
+    max-width: 80%;
+    max-height: 80%;
+    z-index: 30;
+}
+
+.heading:hover {
+    transform: scale(1.5);
+    transition: transform 0.5s ease-in-out; 
+    font-weight: bold; 
+    cursor: pointer;
+}
+
+.overlay2 {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 100; 
+}
+
+.side-tab {
+    position: fixed;
+    z-index: 3;
+    left: -180px;
+    top: 35%;
+    height: 20%;
+    width: 10%;
+    text-align: center;
+    transform: translateY(50%) rotate(90deg);
+    background-color: #ff6db6;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    transition: left 0.3s ease-out;
+    cursor: pointer;
+}
+
+.side-tab:hover {
+    left: 0;
+    transition: transform 0.5s ease-in-out; 
+    font-weight: bold;
+    font-size: larger;
+}
+#popup-overlay {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    display: none; /* Hide the overlay initially */
+}
+
+.popup {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    position: relative;
+}
+
+.popup .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    color: #000;
+    cursor: pointer;
+}
+#about-popup-overlay {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+#about-popup {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    position: relative;
+    z-index: 100;
+}
+
+#about-popup .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    color: #000;
+    cursor: pointer;
+}
+#about-popup-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #ff6db6;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 5;
+}
+#about-popup-btn:hover {
+    transition: transform 0.5s ease-in-out; 
+    transform: scale(1.25);
+    cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+    .heading {
+        font-size: 16pt;
+        height: 10%;
+    }
+
+    .gallery {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .photo {
+        flex: 0 0 100%;
+        height: auto;
+        z-index: 2;
+    }
+
+    .photo img {
+        height: 100%;
+        object-fit: contain;
+    }
+
+    .photo {
+        opacity: 0;
+        transform: translateY(-25px); 
+        transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    }
+
+    .photo.slid-in {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    .photo.spin img {
+        transition: transform 1s ease-in-out;
+    }
+    
+    .photo.spin:hover img {
+        transform: rotate(360deg);
+    }
+}
+
+.overlay2 {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+
+.enlarged-photo {
+    position: relative;
+    max-width: 80%;
+    max-height: 80%;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    color: #fff;
+    cursor: pointer;
+}
+
+#enlarged-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+#sakura-container {
+    position: fixed;
+    top: -100px;
+    left: 0;
+    pointer-events: none; 
+    z-index: 1; 
+    height: 3000px;
+}
+
+.sakura-petal {
+    position: absolute;
+    background: url('images/sakura.png') no-repeat;
+    background-size: contain;
+    width: 20px;
+    height: 20px;
+    animation: fall 5s linear infinite;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(100vh);
+        opacity: 0;
+    }
+}
+
+.toggle-button {
+    position: fixed;
+    top: 50%;
+    right: -40px;
+    transform: translateY(50%) rotate(-90deg);
+    background-color: #ff6db6;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.toggle-button:hover {
+    background-color: #ff82d3;
+}

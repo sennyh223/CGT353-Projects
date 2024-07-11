@@ -1,0 +1,150 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Intelligent Forms</title>
+	<link rel="stylesheet" href="css/stylesNew.css" type="text/css"/>
+	<script type="text/javascript"><!--
+	function updateProgress()
+	{
+		var pb = document.getElementById("pb");
+		var cnt = 0; 
+		if( (document.getElementById("title").value !="Enter the book's title") && (document.getElementById)("title").value !="")
+		cnt++;
+		if( (document.getElementById("genre").value !="What genre is the book") && (document.getElementById)("genre").value !="")
+		cnt++;
+		if( document.getElementById("isbn").value !="")
+		cnt++;
+		if( document.getElementById("date").value !="")
+		cnt++;
+		if( document.getElementById("condition").value !="")
+		cnt++;
+		if( (document.getElementById("name").value !="Enter your full name") && (document.getElementById)("name").value !="")
+		cnt++;
+		if( document.getElementById("studentID").value !="")
+		cnt++;
+		if( (document.getElementById("phone").value !="Example: 555-555-5555") && (document.getElementById)("phone").value !="")
+		cnt++;
+		if( document.getElementById("homeroom").value !="")
+		cnt++;
+		
+		var flag = false;
+		
+		if(document.getElementById("freshman").checked)
+			flag = true;
+		else if(document.getElementById("sophomore").checked)
+			flag= true;
+		else if(document.getElementById("junior").checked)
+			flag= true;
+		else if(document.getElementById("senior").checked)
+			flag= true;
+		else
+			flag = false;
+		if (flag == true)
+			cnt++;
+	
+		pb.value = cnt;
+	
+	
+	} //end function updateProgress
+		
+	--></script>
+</head>
+
+<body>
+	<h1>Book Return Form</h1>
+	<div style="margin-left: 190px;">
+		<span id="progress">Progress: </span>
+		<progress id="pb" value="0" max="10"></progress>
+		<br/> &nbsp;
+	</div>
+	<form name="payment" id="payment" action="processForm.php" method="post">
+	<fieldset>
+		<legend>Book Information</legend>
+		<ol>
+			<li>
+				<label for="title">Title</label>
+				<input id="title" name="title" type="text" placeholder="Enter the book's title"
+						required="required" autofocus="autofocus" onChange="updateProgress();"/>
+			</li>
+			<li>
+				<label for="genre">Genre</label>
+				<input id="genre" name="genre" type="text" placeholder="What genre is the book" 
+						required="required" onChange="updateProgress();"/>
+			</li>
+			<li>
+				<label for="isbn">ISBN</label>
+				<input id="isbn" name="isbn" type="text" placeholder="Example: 9780140817744" 
+						required="required" onChange="updateProgress();"/>
+			</li>
+			<li>
+				<label for="date">Date Borrowed</label>
+				<input id="date" name="date" type="date" 
+						required="required" onChange="updateProgress();"/>
+			</li>
+		</ol>
+	</fieldset>
+	<fieldset>
+		<ol>
+			<li>
+				<label for="condition">Condition of book</label>
+				<textarea id="condition" name="condition" rows="5"
+					required="required" onChange="updateProgress();"></textarea> 
+			</li>
+		</ol>
+	</fieldset>
+	<fieldset>
+		<legend>Student Information</legend>
+		<ol>
+			<li>
+				<label for="name">Name of Student</label>
+				<input id="name" name="name" type="text" placeholder="Enter your full name" 
+						required="required" onChange="updateProgress();"/>
+			</li>
+			<li>
+				<fieldset>
+					<legend>Grade</legend>
+					<ol>
+						<li>
+							<input id="freshman" name="grade" type="radio"/>
+							<label for="freshman">Freshman</label>
+						</li>
+						<li>
+							<input id="sophomore" name="grade" type="radio"/>
+							<label for="sophomore">Sophomore</label>
+						</li>
+						<li>
+							<input id="junior" name="grade" type="radio"/>
+							<label for="junior">Junior</label>
+						</li>
+						<li>
+							<input id="senior" name="grade" type="radio"/>
+							<label for="senior">Senior</label>
+						</li>
+					</ol>
+				</fieldset>
+			</li>
+			<li>
+				<label for="studentID">Student ID</label>
+				<input id="studentID" name="studentID" type="number" 
+						required="required" onChange="updateProgress();"/>
+			</li>
+			<li>
+				<label for="phone">Phone</label>
+				<input id="phone" name="phone" type="number" placeholder="Example: 555-555-5555"
+						required="required" autofocus="autofocus" onChange="updateProgress();"/>
+			</li>
+			<li>
+				<label for="homeroom">Homeroom</label>
+				<input id="homeroom" name="homeroom" type="text" 
+						required="required" onChange="updateProgress();"/>
+			</li>
+		</ol>
+	</fieldset>
+	<fieldset>
+		<button type="submit">Proceed</button>
+	</fieldset>
+	</form>
+	<a href="index.html" class="buttonClass">PAYMENTS PAGE</a>
+</body>
+</html>

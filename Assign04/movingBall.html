@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Assign04 - Moving Ball</title>
+    <style type="text/css">
+        #container{
+            position: absolute;
+            top: 100px;
+            left: 10px;
+            width: 800px;
+            background-color:#ffffff;
+            padding: 0px;
+            border: 3px solid #000000;
+        }
+        #ball{
+            position: absolute;
+            top: 100px; 
+            left: 310px;
+        }
+    </style>
+</head>
+<body>
+    <h3> Assign04 - Moving Ball</h3>
+    <p>
+        <a href="fixed.html">Fixed part 1</a> |
+        <a href="fixedPart2.html">Fixed part 2</a> |
+        <a href="movingAd.html">Moving Ad</a> |
+        <a href="movingBall.html">Moving Ball</a> |
+        <a href="bouncingBalls.html">Bouncing Balls</a> 
+    </p>
+    <div id="containter"></div>
+    <img id="ball" src="images/ball.gif" width="200" height="200" />
+    <script type ="text/javascript" src="js/jquery-3.7.1.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+                var counter = 0;
+                while(counter <100)
+                {
+                    $("#ball").animate({
+                        top:"+=300",
+                        left:"-=300"
+                    },800);
+                    $("#ball").animate({
+                        top:"+=300",
+                        left:"+=300"
+                    },800);
+                    $("#ball").animate({
+                        top:"-=300",
+                        left:"+=300"
+                    },800);
+                    $("#ball").animate({
+                        top:"-=300",
+                        left:"-=300"
+                    },800);
+
+                    counter++;
+                }
+        });
+    </script>
+</body>
+</html>

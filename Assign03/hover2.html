@@ -1,0 +1,86 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset = "utf-8">
+    <title>Assign03 Part 2</title>
+    <style type="text/css">
+        div {width: 200px; height: 400px; border: 1px solid #aaa; text-align: center; background-color: #eee;}
+        div#wrapper { position: absolute; top: 20px; left: 20px; width: 1300px; height: 860px;}
+        div#th1 { position:absolute; top:30px; left:50px; background: url("images2/1.png") no-repeat center;}
+        div#th2 { position:absolute; top:30px; left:250px; background: url("images2/2.png") no-repeat center;}
+        div#th3 { position:absolute; top:30px; left:450px; background: url("images2/3.png") no-repeat center;}
+        div#th4 { position:absolute; top:30px; left:650px; background: url("images2/4.png") no-repeat center;}
+        div#th5 { position:absolute; top:30px; left:850px; background: url("images2/5.png") no-repeat center;}
+        div#th6 { position:absolute; top:30px; left:1050px; background: url("images2/6.png") no-repeat center;}
+        div#th7 { position:absolute; top:430px; left:50px; background: url("images2/7.png") no-repeat center;}
+        div#th8 { position:absolute; top:430px; left:250px; background: url("images2/8.png") no-repeat center;}
+        div#th9 { position:absolute; top:430px; left:450px; background: url("images2/9.png") no-repeat center;}
+        div#th10 { position:absolute; top:430px; left:650px; background: url("images2/10.png") no-repeat center;}
+        div#th11 { position:absolute; top:430px; left:850px; background: url("images2/11.png") no-repeat center;}
+        div#th12 { position:absolute; top:430px; left:1050px; background: url("images2/12.png") no-repeat center;}
+
+        
+        .buttonClass {
+            font-size:20px;
+            margin-top:auto;
+            text-align:center;
+            font-family:Arial;
+            width:100px;
+            height:50px;
+            border-width:1px;
+            color:#fff;
+            border-top-left-radius:15px;
+            border-top-right-radius:15px;
+            border-bottom-left-radius:15px;
+            border-bottom-right-radius:15px;
+            background:#626262;
+            position:absolute;
+            top:900px;
+            left:20px;
+
+        }
+    
+        .buttonClass:hover {
+            background: #d8d8d8
+        }
+                
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        <div id="th1"></div>
+        <div id="th2"></div>
+        <div id="th3"></div>
+        <div id="th4"></div>
+        <div id="th5"></div>
+        <div id="th6"></div>
+        <div id="th7"></div>
+        <div id="th8"></div>
+        <div id="th9"></div>
+        <div id="th10"></div>
+        <div id="th11"></div>
+        <div id="th12"></div>
+    </div>
+</body>
+
+    <script type="Text/javascript" src="js/jquery-3.7.1.min.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+            //round the corners
+            $("div").css("border-radius","10px");
+
+            $("div[id!='wrapper']").animate({"opacity" : .1}).hover(function(){
+                //runs if the mouse IS OVER the pic
+                //mouseOver
+                $(this).animate({"opacity" : 1});
+            }, function(){
+                //runs if the mouse is NOT OVER the pic
+                //mouseOut
+                $(this).animate({"opacity": .4});
+            }); //end animate divs
+        }) //end document ready
+    </script>
+
+    <a href="hover.html" class="buttonClass">Back</a>
+</html>

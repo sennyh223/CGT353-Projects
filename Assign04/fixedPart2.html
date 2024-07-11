@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Assign04 - Fixed Part2</title>
+    <style type="text/css">
+        body{
+            background-color:rgb(245, 252, 255);
+        }
+        #dropdown{
+            font-family: Arial, Helvetica, sans-serif;
+            position: absolute;
+            top: -150px;
+            left: 400px;
+            background-color: #ccecff;
+            padding: 100px;
+            border: 1px solid #000000;
+            z-index: 75;
+        }
+        #dropdown.fixed {
+            position: fixed;
+        }
+        #contactForm{
+            width: 400px;
+            height: 250px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 9pt;
+            font-weight: bold;
+            position: absolute;
+            top: 150px;
+            left: -400px;
+            background-color: rgb(50,50,50);
+            background-color: rgba(50,50,50,0.9);
+            margin: 0px;
+            z-index: 110;
+        }
+        #contact span{
+            padding: 0px;
+            margin: 0px;
+            position: relative;
+            top: 2px;
+        }
+        #contact{
+            font-family: Arial, Helvetica, sans-serif;
+            font-size:9pt;
+            font-weight: bold;
+            text-align: center;
+            padding-top: 17px;
+            padding-bottom: 0px;
+            padding-left:3px;
+            padding-right:3px;
+            position:absolute;
+            top: 200px;
+            left: -42px;
+            border-radius: 10px;
+            background-color: rgb(99, 206, 255);
+            background-color:rgba(99, 206, 255,.75);
+            width: 90px;
+            height: 25px;
+            margin: 0px;
+            z-index: 100;
+
+        }
+        #contact:hover,
+        #contact:focus {
+            background-color: rgb(99, 206, 255);
+            background-color: rgba(99, 206, 255, .90);
+            cursor: pointer;
+        }
+		#contact.fixed,
+		#contactForm.fixed{
+			position:fixed;
+		}
+        .rotate{
+            transform: rotate(-90deg);
+            -moz-transform: rotate(-90deg);
+            -webkit-transform: rotate(-90deg);
+            -ms-transform: rotate(-90deg);
+            -o-transform: rotate(-90deg);
+        }
+        #content1, #content2, #content3, #content4, #content5 {
+            font-family: Arial, Helvetica, sans-serif;
+            position: absolute;
+            border-radius: 15px;
+            background-color: #adc1c9;
+            width: 600px;
+            height: 300px;
+            overflow: hidden;
+            z-index: 1;
+        }
+        #content1{
+            top: 100px;
+            left: 25px;
+        }
+        #content2{
+            top: 100px;
+            left: 660px;
+        }
+        #content3{
+            top: 425px;
+            left: 25px;
+        }
+        #content4{
+            top: 425px;
+            left: 660px;
+        }
+        #content5{
+            top: 750px;
+            left: 25px;
+            height: 700px;
+        }
+
+    </style>
+</head>
+<body>
+    <h3> Assign04 - Fixed Part 2</h3>
+    <p>
+        <a href="fixed.html">Fixed part 1</a> |
+        <a href="fixedPart2.html">Fixed part 2</a> |
+        <a href="movingAd.html">Moving Ad</a> |
+        <a href="movingBall.html">Moving Ball</a> |
+        <a href="bouncingBalls.html">Bouncing Balls</a> 
+    </p>
+    
+    <div id="dropdown">
+        <p>Hello visitor!</p>
+        <p>Get rewarded with our free survey!</p>
+        <a href="#" id="closeAd">Close</a>
+
+    </div>
+
+    <div id="contact"><span>Our Services</span></div>
+    <div id="contactForm">
+        <div id="contactClose" style="position: relative; text-align: center; width: 15px; left: 375px; top: 5px; 
+                                      border: 1px solid #dddddd; padding: 1px; color: #dddddd; cursor: pointer;">X</div>
+        <div id="contactAddress" style="position: relative; width:325px; left:45px; top:5px; padding: 1px; color:#dddddd;">
+            Web Design<br/><br/>
+            Design Consultation<br/><br/>
+            Branding Design<br/><br/>
+            Graphic Design
+        </div>
+    </div>
+
+
+
+
+
+
+
+    <script type ="text/javascript" src="js/jquery-3.7.1.min.js"></script>
+    <script type ="text/javascript">
+        $(document).ready(function(){
+            //make the ad drop down
+            $("#dropdown").animate({
+                top:"+=500"
+            }, 1000);
+            //fix the Ad so it won't scroll
+            $("#dropdown").addClass("fixed");
+            //close the Ad
+            $("#closeAd").click(function(event){
+                //prevent the default functionality
+                event.preventDefault();
+                //move the Ad back off the screen
+                $("#dropdown").css("top","-500px");
+            });
+
+
+            //contact form
+            $("#contact").addClass("rotate");
+
+            $(window).scroll(function(event){
+                $("#contact").addClass("fixed");
+            }); //end scroll
+
+            var isShowing = 1; //1 if it is visible, 0 if it is not
+            //when contact me is clicked
+            $("#contact").click(function(e){
+                e.preventDefault();
+                if( isShowing%2)
+                {
+                    $("#contact").animate({
+                        left:"+=400"
+                    },700);
+                    $("#contactForm").animate({
+                        left:"+=400"
+                    },700);
+
+                    $("#contact").addClass("fixed");
+                    $("#contactForm").addClass("fixed");
+
+                    $("#contact").css("background-color", "rgba(99, 206, 255,.95)");
+                    
+                    isShowing++;
+                }
+                else{
+                    $("#contact").animate({
+                        left:"-=400"
+                    },700);
+                    $("#contactForm").animate({
+                        left:"-=400"
+                    },700);
+                    $("#contact").css("background-color", "rgba(99, 206, 255,.75)");
+                    
+                    isShowing++;
+                }
+            }); //end contact click
+
+            //when the X is clicked
+            $("#contactClose").click(function(e){
+                e.preventDefault();
+                    $("#contact").animate({
+                        left:"-=400"
+                    },700);
+                    $("#contactForm").animate({
+                        left:"-=400"
+                    },700);
+                    $("#contact").css("background-color", "rgba(99, 206, 255,.75)");
+                    
+                    isShowing++;
+            })
+
+        }); //end document ready
+
+
+
+    </script>
+
+
+
+
+
+
+
+
+    <div id="content1">
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+            Dui vivamus arcu felis bibendum ut tristique et egestas quis. Fermentum dui faucibus in ornare quam viverra orci sagittis eu. 
+            Nisi lacus sed viverra tellus in hac habitasse platea. Malesuada bibendum arcu vitae elementum curabitur vitae nunc sed. 
+            Vitae congue mauris rhoncus aenean vel. Orci a scelerisque purus semper. Commodo viverra maecenas accumsan lacus vel facilisis 
+            volutpat est. Quam adipiscing vitae proin sagittis nisl rhoncus mattis. Suspendisse interdum consectetur libero id. Nisl rhoncus 
+            mattis rhoncus urna neque viverra justo nec ultrices. Tellus mauris a diam maecenas sed enim ut sem viverra. 
+        </p>
+    </div>
+    <div id="content2">
+        <p>
+            Nulla porttitor massa id neque aliquam vestibulum morbi blandit cursus. Adipiscing at in tellus integer feugiat scelerisque varius. 
+            Quis vel eros donec ac. Aliquet risus feugiat in ante metus. Risus pretium quam vulputate dignissim suspendisse in. Diam donec adipiscing 
+            tristique risus nec feugiat. Euismod elementum nisi quis eleifend quam. Gravida arcu ac tortor dignissim convallis aenean et tortor at. 
+            Ultricies tristique nulla aliquet enim tortor. Congue nisi vitae suscipit tellus mauris a. Metus dictum at tempor commodo ullamcorper a. 
+            Lectus magna fringilla urna porttitor.
+        </p>
+    </div>
+    <div id="content3">
+        <p>
+            Purus viverra accumsan in nisl. Tempus imperdiet nulla malesuada pellentesque elit eget gravida cum. Convallis a cras semper auctor. 
+            Vivamus at augue eget arcu dictum. Quis commodo odio aenean sed adipiscing diam. Egestas congue quisque egestas diam. Sed felis eget 
+            velit aliquet sagittis id consectetur purus ut. Velit ut tortor pretium viverra suspendisse. Sociis natoque penatibus et magnis dis. 
+            Sem et tortor consequat id porta nibh venenatis. Quis eleifend quam adipiscing vitae proin sagittis nisl rhoncus. In pellentesque 
+            massa placerat duis ultricies lacus sed turpis. Enim facilisis gravida neque convallis a cras semper auctor neque.
+        </p>
+    </div>
+    <div id="content4">
+        <p>
+            Rhoncus aenean vel elit scelerisque mauris pellentesque pulvinar. Feugiat in fermentum posuere urna. Senectus et netus et malesuada 
+            fames ac turpis egestas. Pretium quam vulputate dignissim suspendisse in est ante. Quis vel eros donec ac odio tempor. Tellus id 
+            interdum velit laoreet id donec ultrices tincidunt. Orci dapibus ultrices in iaculis nunc. Velit ut tortor pretium viverra suspendisse 
+            potenti nullam. Sem et tortor consequat id porta nibh venenatis cras sed. A diam maecenas sed enim ut sem viverra aliquet. Amet mattis 
+            vulputate enim nulla aliquet porttitor lacus. Tortor vitae purus faucibus ornare suspendisse. Mus mauris vitae ultricies leo. Euismod 
+            nisi porta lorem mollis aliquam ut porttitor. Sed cras ornare arcu dui vivamus arcu felis bibendum. Habitant morbi tristique senectus 
+            et netus et. Facilisis volutpat est velit egestas dui id ornare arcu. Egestas egestas fringilla phasellus faucibus scelerisque. 
+            Senectus et netus et malesuada fames ac turpis egestas.
+        </p>
+    </div>
+    <div id="content5">
+        <p>scrolling scrolling</p>
+        <p>scrolling scrolling</p>
+        <p>scrolling scrolling</p>
+        <p>scrolling scrolling</p>
+        <p>scrolling scrolling</p>
+        <p>scrolling scrolling</p>
+        <p>scrolling scrolling</p>
+        <p>scrolling scrolling</p>
+        <p>scrolling scrolling</p>
+        <p>scrolling scrolling</p>
+        <p>scrolling scrolling</p>
+        <p>scrolling scrolling</p>
+        <p>scrolling scrolling</p>
+        <p>scrolling scrolling</p>
+        <p>scrolling scrolling</p>
+        <p>scrolling scrolling</p>
+        <p>scrolling scrolling</p>
+        <p>scrolling scrolling</p>
+        <p>scrolling scrolling</p>
+        <p>scrolling scrolling</p>
+        <p>scrolling scrolling</p>
+        <p>scrolling scrolling</p>
+        <p>scrolling scrolling</p>
+        <p>scrolling scrolling</p>
+        <p>scrolling scrolling</p>
+        <p>scrolling scrolling</p>
+        <p>scrolling scrolling</p>
+        <p>scrolling scrolling</p>
+        <p>scrolling scrolling</p>
+        <p>scrolling scrolling</p>
+    </div>
+</body>
+</html>

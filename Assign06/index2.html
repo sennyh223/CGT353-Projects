@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Responsive Design Part 2</title>
+    <script type="text/javascript" src="js/jquery-3.7.1.min.js"></script>
+    <style type="text/css">
+        #top{position:absolute; top:0px; left:0px; width:1450px; height:200px; background-color: #000000;}
+        #left{position:absolute; top:200px; left:0px; width:220px; height:200%; background-color: #eaeaea; padding:15px; font-family: Arial, Helvetica, sans-serif;}
+        #middle{position:absolute; top:200px; left:250px; width:770px; height:200%; background-color: #ffffff; padding:15px; font-family: Arial, Helvetica, sans-serif;}
+        #right{position:absolute; top:200px; left:1050px; width:370px; height:200%; background-color: #eaeaea; padding:15px;}
+        h1{color:#ffffff; font-size: 50px; text-align: center; font-family: Arial, Helvetica, sans-serif;}
+        h3{color:#000000; font-size: 20px; font-family:Arial, Helvetica, sans-serif;}
+        ul{list-style: none;}
+        li{text-decoration: underline; color:rgb(0, 140, 179); font-size:18px; cursor: pointer;}
+
+        @media screen and (max-width:1100px){
+            #left{position:absolute; top:200px; left:0px; width:150px; height:200%; background-color: #949494; padding:15px; font-family: Arial, Helvetica, sans-serif;}
+            h3{color:#333333; font-size: 20px; font-family:Arial, Helvetica, sans-serif;}
+            li{text-decoration: underline; color:rgb(36, 93, 114); font-size:18px; cursor: pointer;}
+            #top{position:absolute; top:0px; left:0px; width:1100px; height:200px; background-color: #000000;}
+            #middle{position:absolute; top:200px; left:150px; width:520px; height:200%; background-color: #b2b2b2; padding:15px;}
+            #right{position:absolute; top:200px; left:700px; width:370px; height:200%; background-color: #949494; padding:15px;}
+        }
+        @media screen and (max-width:900px){
+            #left{position:absolute; top:200px; left:0px; width:150px; height:200%; background-color: #5e5e5e; padding:15px; font-family: Arial, Helvetica, sans-serif;}
+            h3{color:#333333; font-size: 20px; font-family:Arial, Helvetica, sans-serif;}
+            #top{position:absolute; top:0px; left:0px; width:900px; height:200px; background-color: #000000;}
+            #middle{position:absolute; top:200px; left:120px; width:750px; height:200%; background-color: #7e7e7e; padding:15px;}
+            #right{display:none;}
+        }
+        @media screen and (max-width:700px){
+            #top{position:absolute; top:0px; left:0px; width:700px; height:200px; background-color: #000000;}
+            #left{position:absolute; top:200px; left:0px; width:120px; height:200%; background-color: #343434; padding:15px;}
+            #middle{position:absolute; top:200px; left:120px; width:550px; height:200%; background-color: #424242; padding:15px;}
+            h3{color:#545454; font-size: 20px; font-family:Arial, Helvetica, sans-serif;}
+            #right{display:none;}
+        }
+        @media screen and (max-width:500px){
+            #top{position:absolute; top:0px; left:0px; width:500px; height:200px; background-color: #000000;}
+            #left{position:absolute; top:200px; left:0px; width:120px; height:200%; background-color: #2a2a2a; padding:15px;}
+            #middle{position:absolute; top:200px; left:120px; width:350px; height:200%; background-color: #373737; padding:15px;}
+            #right{display:none;}
+            h1{color:#ffffff; font-size: 30px; text-align: center; font-family: Arial, Helvetica, sans-serif;}
+            h3{color:#b4b4b4; font-size: 16px; font-family: Arial, Helvetica, sans-serif;}
+            ul{list-style: none;}
+        }
+        @media screen and (max-width:300px){
+            h1{color:#ffffff; font-size: 30px; text-align: center;}
+            h3{color:#ffffff; font-size: 16px; width:270px; height:35px; text-align:center; background-color: #3b3b3b; color:#000000;}
+            #top{position:absolute; top:0px; left:0px; width:300px; height:200px; background-color: #000000;}
+            #left{position:absolute; top:200px; left:0px; width:270px; height:200%; background-color: #000000; padding:15px;}
+            #middle{position:absolute; top:700px; left:0px; width:270px; height:200%; background-color: #101010; padding:15px;}
+            #right{display:none;}
+            ul{list-style: none;}
+        }
+        .button {
+            font-size:15px;
+            font-family:Arial;
+            color:white;
+        }
+          
+          .button:hover {
+            background: rgba(128, 128, 128, 1)
+          }
+
+        #windowSize{position:absolute; top:100px; left:15px; color:#ffffff; font-size: 14px;}
+        
+    </style>
+</head>
+<body>
+    <div id="top"></div>
+    <div id="left"></div>
+    <div id="middle"></div>
+    <div id="right"></div>
+    <div id="windowSize"></div>
+
+    <div id="banner">
+        <img src="images/Animation_1.gif" alt="Logo" title="Logo" width="100"/>
+        <a href="index.html" class="button">Part 1</a>
+        <a href="index3.html" class="button">Part 3</a>
+        <h1>Senny's Page</h1>
+
+    </div>
+
+    <div id="ads">
+        <img src="images/1.jpg" alt="ad" title="ad" width="350"/>
+        <br/> <br/>
+        <img src="images/2.jpg" alt="ad" title="ad" width="350"/>
+        <br/> <br/>
+        <img src="images/3.jpg" alt="ad" title="ad" width="350"/>
+        <br/> <br/>
+        <img src="images/4.jpg" alt="ad" title="ad" width="350"/>
+        <br/> <br/>
+        <img src="images/5.jpg" alt="ad" title="ad" width="350"/>
+        <br/> <br/>
+        <img src="images/6.jpg" alt="ad" title="ad" width="350"/>
+        <br/> <br/>
+    </div>
+
+    <div id="nav">
+        <h3>This</h3>
+        <h3>Page</h3>
+        <h3>Gets</h3>
+        <h3>Darker</h3>
+        <h3>As</h3>
+        <h3>It</h3>
+        <h3>Resizes</h3>
+    </div>
+
+    <script type="text/javascript">
+        $(document).ready(function(e){
+            $("#top").html($("#banner") ); //select the div with id=banner and place it into the div with id=top
+            $("#right").html($("#ads") );
+            $("#left").html($("#nav") );
+
+            $("#middle").append("I programmed this page to get darker whenever you resize it. ");
+            $("#middle").append("Hopefully everything is readable ");
+            $("#middle").append("or not...<br><br>");
+            $("#middle").append("Idea shower onward and upward, productize the deliverables and focus on the bottom line i dont care if you got some copy, why you dont use officeipsumcom or something like that ? take five, punch the tree, and come back in here with a clear head. Optimize for search into the weeds, or quick sync, so everyone thinks the soup tastes better after theyâ€™ve pissed in it, but can you put it into a banner that is not alarming, but eye catching and not too giant, but show grit. Collaboration through advanced technlogy I just wanted to give you a heads-up. I know you're busy. Hit the ground running we are running out of runway let's circle back tomorrow sea change, but downselect don't over think it. Up the flagpole bazooka that run it past the boss jump right in and banzai attack will they won't they its all greek to me unless they bother until the end of time maybe vis a vis too many cooks over the line it's about managing expectations tread it daily translating our vision of having a market leading platfrom, for bells and whistles, but gage [sic] where the industry is heading and give back to the community what weâ€™ve learned. We need to think big start small and scale fast to energize our clients cannibalize, nor we need evergreen content net net, for out of the loop, or commitment to the cause . I know you're busy cannibalize, nor helicopter view, for turn the crank, yet feature creep, table the discussion quick win. We need to have a Come to Jesus meeting with Phil about his attitude. High turnaround rate hammer out, yet digitalize, for what about scaling components to a global audience? who's responsible for the ask for this request? going forward zeitgeist. New economy finance. We should leverage existing asserts that ladder up to the message up the flagpole bazooka that run it past the boss jump right in and banzai attack will they won't they its all greek to me unless they bother until the end of time maybe vis a vis too many cooks over the line digital literacy collaboration through advanced technlogy, or even dead cats bounce. Hard stop can we align on lunch orders, for gain alignment deep dive. Big boy pants rehydrate the team, and we need to crystallize a plan manage expectations. Dunder mifflin. Moving the goalposts optimize the fireball increase the pipelines, for offline this discussion, so win-win-win.")
+            
+            $(window).on('resize',function(){
+                var win=$(this);
+                $("#windowSize").html(win.width());
+            })
+        });
+    </script>
+
+
+</body>
+</html>

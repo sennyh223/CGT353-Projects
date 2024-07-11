@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Bouncing Balls</title>
+    <style type="text/css">
+        #field1, #field2, #field3, #field4 {
+            height: 300px;
+            width: 200px;
+            border-bottom: 4px solid #000000;
+            border-left: 1px #00ff00 solid;
+            border-right: 1px #00ff00 solid;
+            position: absolute;
+            top: 0px;
+        }
+        #field1{
+            left: 10px;
+        }
+        #field2{
+            left: 235px;
+        }
+        #field3{
+            left: 460px;
+        }
+        #field4{
+            left: 685px;
+        }
+
+        #ball1, #ball2, #ball3, #ball4{
+            position: absolute;
+            cursor: pointer;
+            top: 0px;
+        }
+        #ball1{
+            left: 40px;
+        }
+        #ball2{
+            left: 290px;
+        }
+        #ball3{
+            left: 540px;
+        }
+        #ball4{
+            left: 810px;
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="field1"></div>
+    <div id="field2"></div>
+    <div id="field3"></div>
+    <div id="field4"></div>
+
+    <img src="images/ball.svg" width="40" height="40" id="ball1" />
+    <img src="images/ball.svg" width="40" height="40" id="ball2" />
+    <img src="images/ball.svg" width="40" height="40" id="ball3" />
+    <img src="images/ball.svg" width="40" height="40" id="ball4" />
+    
+<script type ="text/javascript" src="js/jquery-3.7.1.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+		
+        $("#ball1").click(function(){
+            $("#ball1").animate({
+                top:"+=260",
+                easing:'easeOut'
+            },800);
+            $("#ball1").animate({
+                top:"-=120",
+                easing:'easeOut'
+            },700);
+            $("#ball1").animate({
+                top:"+=120",
+                easing:'easeOut'
+            },700);
+            $("#ball1").animate({
+                top:"-=30",
+                easing:'easeOut'
+            },500);
+            $("#ball1").animate({
+                top:"+=30",
+                easing:'easeOut'
+            },500);
+            $("#ball1").animate({
+                top:"-=15",
+                easing:'easeOut'
+            },350);
+            $("#ball1").animate({
+                top:"+=15",
+                easing:'easeOut'
+            },350);
+            $("#ball1").animate({
+                top:"-=5",
+                easing:'easeOut'
+            },150);
+            $("#ball1").animate({
+                top:"+=5",
+                easing:'easeOut'
+            },150);
+        });
+        $("#ball2").click(function(){
+            $("#ball2").animate({
+                top:"+=260",
+                easing:'easeOut'
+            },700);
+            $("#ball2").animate({
+                top:"-=120",
+                easing:'easeOut'
+            },600);
+            $("#ball2").animate({
+                top:"+=120",
+                easing:'easeOut'
+            },600);
+            $("#ball2").animate({
+                top:"-=50",
+                easing:'easeOut'
+            },400);
+            $("#ball2").animate({
+                top:"+=50",
+                easing:'easeOut'
+            },400);
+            $("#ball2").animate({
+                top:"-=15",
+                easing:'easeOut'
+            },250);
+            $("#ball2").animate({
+                top:"+=15",
+                easing:'easeOut'
+            },250);
+            $("#ball2").animate({
+                top:"-=5",
+                easing:'easeOut'
+            },50);
+            $("#ball2").animate({
+                top:"+=5",
+                easing:'easeOut'
+            },50);
+        });
+        $("#ball3").click(function(){
+            $("#ball3").animate({
+                top:"+=260",
+                easing:'easeOut'
+            },600);
+            $("#ball3").animate({
+                top:"-=120",
+                easing:'easeOut'
+            },500);
+            $("#ball3").animate({
+                top:"+=120",
+                easing:'easeOut'
+            },500);
+            $("#ball3").animate({
+                top:"-=60",
+                easing:'easeOut'
+            },300);
+            $("#ball3").animate({
+                top:"+=60",
+                easing:'easeOut'
+            },300);
+            $("#ball3").animate({
+                top:"-=15",
+                easing:'easeOut'
+            },150);
+            $("#ball3").animate({
+                top:"+=15",
+                easing:'easeOut'
+            },150);
+            $("#ball3").animate({
+                top:"-=5",
+                easing:'easeOut'
+            },20);
+            $("#ball3").animate({
+                top:"+=5",
+                easing:'easeOut'
+            },20);
+        });
+        $("#ball4").click(function(){
+            $("#ball4").animate({
+                top:"+=260",
+                easing:'easeOut'
+            },400);
+            $("#ball4").animate({
+                top:"-=170",
+                easing:'easeOut'
+            },300);
+            $("#ball4").animate({
+                top:"+=170",
+                easing:'easeOut'
+            },300);
+            $("#ball4").animate({
+                top:"-=70",
+                easing:'easeOut'
+            },200);
+            $("#ball4").animate({
+                top:"+=70",
+                easing:'easeOut'
+            },200);
+            $("#ball4").animate({
+                top:"-=15",
+                easing:'easeOut'
+            },100);
+            $("#ball4").animate({
+                top:"+=15",
+                easing:'easeOut'
+            },100);
+            $("#ball4").animate({
+                top:"-=5",
+                easing:'easeOut'
+            },20);
+            $("#ball4").animate({
+                top:"+=5",
+                easing:'easeOut'
+            },20);
+        });
+    });
+
+</script>
+</body>
+</html>

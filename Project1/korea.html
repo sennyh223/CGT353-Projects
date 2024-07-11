@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset = "utf-8">
+    <title>South Korea</title>
+    <style type="text/css">
+        div {width: 250px; height: 200px; border: 1px solid #aaa; text-align: center; background-color: #eee;}
+        div#wrapper { position: absolute; top: 90px; left: 30rem; width: 840px; height: 490px;}
+        div#th1 { position:absolute; top:30px; left:30px; background: url("images/korea/1.jpg") no-repeat center;}
+        div#th2 { position:absolute; top:30px; left:300px; background: url("images/korea/2.jpg") no-repeat center;}
+        div#th3 { position:absolute; top:30px; left:560px; background: url("images/korea/3.jpg") no-repeat center;}
+        div#th4 { position:absolute; top:260px; left:560px; background: url("images/korea/4.jpg") no-repeat center;}
+        div#th5 { position:absolute; top:260px; left:30px; background: url("images/korea/5.jpg") no-repeat center;}
+        div#th6 { position:absolute; top:260px; left:300px; background: url("images/korea/6.jpg") no-repeat center;}
+
+        .buttonClass {
+            font-size:20px;
+            margin-top:auto;
+            text-align:center;
+            font-family:Arial, Helvetica, sans-serif;
+            width:100px;
+            height:25px;
+            border-width:1px;
+            color:#fff;
+            border-top-left-radius:15px;
+            border-top-right-radius:15px;
+            border-bottom-left-radius:15px;
+            border-bottom-right-radius:15px;
+            background:#626262;
+            position:absolute;
+            top:600px;
+            left:845px;
+            padding:10px;
+
+        }
+    
+        .buttonClass:hover {
+            background: #d8d8d8
+        }
+        
+        #pageName{
+            font-family: Arial, Helvetica, sans-serif;
+            font-size:48px;
+            font-weight: bold;
+            margin-left:755px;
+            margin-top: 25px;
+          }
+    </style>
+</head>
+<body>
+    <h3 id="pageName"> South Korea</h3>
+    <div id="wrapper">
+        <div id="th1"></div>
+        <div id="th2"></div>
+        <div id="th3"></div>
+        <div id="th4"></div>
+        <div id="th5"></div>
+        <div id="th6"></div>
+    </div>
+</body>
+
+    <script type="Text/javascript" src="js/jquery-3.7.1.min.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+            //round the corners
+            $("div").css("border-radius","10px");
+
+            $("div[id!='wrapper']").animate({"opacity" : .6}).hover(function(){
+                //runs if the mouse IS OVER the pic
+                //mouseOver
+                $(this).animate({"opacity" : 1});
+            }, function(){
+                //runs if the mouse is NOT OVER the pic
+                //mouseOut
+                $(this).animate({"opacity": .6});
+            }).click(function(){
+                //$("#th8").css("display", "none");
+                window.location.href = "https://english.visitkorea.or.kr/svc/main/index.do"; //not jquery
+            }); //end animate divs
+
+        }) //end document ready
+    </script>
+    <a href="index.html" class="buttonClass">BACK</a>
+</html>

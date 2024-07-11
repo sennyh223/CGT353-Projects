@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Japanese Photography Gallery</title>
+</head>
+<body>
+    <div id="about-popup-overlay">
+        <div id="about-popup">
+            <span id="about-popup-close-btn" class="close-btn">×</span>
+            <h2>About This Page</h2>
+            <p>I created this page to showcase some of the photography works of Japanese photographers that I found cool. I want to eventually visit the country some day and when I do I might update these photos with my own :D</p>
+        </div>
+    </div>
+    
+    <div id="about-popup-btn">About this Page</div>
+
+    <div class="overlay" id="popup-overlay">
+    <div class="popup">
+        <span class="close-btn" onclick="closePopup()">×</span>
+        <p>Welcome to the Japanese Photography Gallery!<br>Please scroll down to explore the beautiful photos.<br>You can also hover on every element on the page!</p>
+    </div>
+    </div>
+
+    <div class="heading" id="fixed"><br>Japanese Photography</div>
+    <div id="sakura-container"></div>
+    <div class="gallery">
+        <div class="photo border" id="photo1" onclick="enlargeImage(this)">
+            <img src="images/1.png" alt="Photo 1">
+            <a href="https://fxtwitter.com/bee_tk_/status/1723988598712918059?s=46">Original Post</a>
+        </div>
+        <div class="photo spin" id="photo2" onclick="enlargeImage(this)">
+            <img src="images/2.png" alt="Photo 2">
+            <a href="https://fxtwitter.com/shun_chan20/status/1723635261001912681?s=46">Original Post</a>
+        </div>
+        <div class="photo border" id="photo3" onclick="enlargeImage(this)">
+            <img src="images/3.png" alt="Photo 3">
+            <a href="https://fxtwitter.com/keionoteio/status/1720586059430650291?s=20">Original Post</a>
+        </div>
+        <div class="photo spin" id="photo4" onclick="enlargeImage(this)">
+            <img src="images/4.png" alt="Photo 4">
+            <a href="https://fxtwitter.com/yoshito_photo1/status/1722192236837064848?s=20">Original Post</a>
+        </div>
+        <div class="photo border" id="photo5" onclick="enlargeImage(this)">
+            <img src="images/5.png" alt="Photo 5">
+            <a href="https://fxtwitter.com/Naonox_photo/status/1722196651245555792?s=20">Original Post</a>
+        </div>
+        <div class="photo spin" id="photo6" onclick="enlargeImage(this)">
+            <img src="images/6.png" alt="Photo 6">
+            <a href="https://fxtwitter.com/box_box_you/status/1718924460034826593?s=46">Original Post</a>
+        </div>
+        <div class="photo border" id="photo7" onclick="enlargeImage(this)">
+            <img src="images/7.png" alt="Photo 7">
+            <a href="https://fxtwitter.com/photono_gen/status/1721093949820153864?s=20">Original Post</a>
+        </div>
+        <div class="photo spin" id="photo8" onclick="enlargeImage(this)">
+            <img src="images/8.png" alt="Photo 8">
+            <a href="https://fxtwitter.com/Kyoto_Ryota_F/status/1720380685024989480?s=20">Original Post</a>
+        </div>
+        <div class="photo border" id="photo9" onclick="enlargeImage(this)">
+            <img src="images/9.png" alt="Photo 9">
+            <a href="https://fxtwitter.com/haskap1017/status/1718114128567611841?s=46">Original Post</a>
+        </div>
+    </div>
+
+    <div class="overlay2" onclick="closeOverlay()">
+        <div class="enlarged-photo" id="enlarged-photo">
+            <span class="close-btn" onclick="closeOverlay()">×</span>
+            <img src="" alt="Enlarged Image" id="enlarged-image">
+        </div>
+    </div>
+
+    <div class="side-tab" id="side-tab">
+        Hover Me <br> <br>
+        Hello there! <br>
+        <br>※\(^o^)/※
+    </div>
+    <div id="toggle-button" class="toggle-button">Toggle Petals</div>
+    <script src="script.js"></script>
+</body>
+</html>

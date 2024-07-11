@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>showHide</title>
+</head>
+<body>
+    <img src="images/1.jpg"/>
+    <img src="images/2.jpg"/>
+    <img src="images/3.jpg"/>
+    <img src="images/4.jpg" id="slipperyalligator" />
+    <img src="images/5.jpg"/>
+    <img src="images/6.jpg"/>
+
+    <div id="cutepuppy">Hide Image</div>
+    <div id="fluffycat">Show Image</div>
+
+    <script type="text/javascript" src="js/jquery-3.7.1.min.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function(e){
+            $("#cutepuppy").css("cursor", "pointer");
+            $("#fluffycat").css("cursor", "pointer");
+
+            $("#cutepuppy").click(function(e){
+                $("#slipperyalligator").hide();
+            });
+            $("#fluffycat").click(function(e){
+                $("#slipperyalligator").show();
+            });
+        });
+    </script>
+</body>
+</html>
